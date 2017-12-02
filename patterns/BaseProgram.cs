@@ -9,7 +9,7 @@ namespace patterns
         {
             string programName = this.GetType().Namespace;
 
-            Console.WriteLine("Run " + programName + "...");
+            Console.WriteLine("\r\nRun " + programName + "...");
             Run();
             Console.WriteLine("Terminate " + programName + "...");
         }

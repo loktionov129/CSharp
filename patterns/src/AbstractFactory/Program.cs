@@ -1,16 +1,14 @@
-﻿using System;
-
-namespace patterns.src.AbstractFactory
+﻿namespace patterns.src.AbstractFactory
 {
     public class Program : patterns.BaseProgram
     {
-        public Program()
-        {
-        }
-
         public override void Run()
         {
-            Console.WriteLine("hello from AbstractFactory");
+            Client client = new Client(new CocaColaFactory());
+            client.Run();
+
+            client = new Client(new PepsiFactory());
+            client.Run();
         }
     }
 }

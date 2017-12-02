@@ -38,6 +38,16 @@
     <Compile Include="src\Builder\Program.cs" />
     <Compile Include="BaseProgram.cs" />
     <Compile Include="App.cs" />
+    <Compile Include="src\AbstractFactory\Client.cs" />
+    <Compile Include="src\AbstractFactory\BaseFactory.cs" />
+    <Compile Include="src\AbstractFactory\BaseBottle.cs" />
+    <Compile Include="src\AbstractFactory\BaseWater.cs" />
+    <Compile Include="src\AbstractFactory\CocaColaWater.cs" />
+    <Compile Include="src\AbstractFactory\CocaColaBottle.cs" />
+    <Compile Include="src\AbstractFactory\CocaColaFactory.cs" />
+    <Compile Include="src\AbstractFactory\PepsiBottle.cs" />
+    <Compile Include="src\AbstractFactory\PepsiFactory.cs" />
+    <Compile Include="src\AbstractFactory\PepsiWater.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\" />

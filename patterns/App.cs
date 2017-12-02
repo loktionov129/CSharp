@@ -36,7 +36,7 @@ namespace patterns
 
         private string GetProgramName()
         {
-            Console.WriteLine("\r\nEnter a name or number of program:");
+            Console.WriteLine("\r\n\r\nEnter a name or number of program:");
             PrintAllPrograms();
             Console.WriteLine("Or type one of command to exit: " + String.Join(", ", commandForTerminate));
             return Console.ReadLine().Trim().ToLower();
