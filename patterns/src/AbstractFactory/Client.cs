@@ -1,20 +1,19 @@
-﻿using System;
-namespace patterns.src.AbstractFactory
+﻿namespace patterns.AbstractFactory
 {
     public class Client
     {
-        public BaseBottle bottle;
-        public BaseWater water;
+        public BaseBottle Bottle { get; }
+        public BaseWater Water { get; }
 
         public Client(BaseFactory factory)
         {
-            bottle = factory.CreateBottle();
-            water = factory.CreateWater();
+            Bottle = factory.CreateBottle();
+            Water = factory.CreateWater();
         }
 
         public void Run()
         {
-            bottle.Fill(water);
+            Bottle.Fill(Water);
         }
     }
 }

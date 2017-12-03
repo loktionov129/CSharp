@@ -1,5 +1,4 @@
-﻿using System;
-namespace patterns.src.AbstractFactory
+﻿namespace patterns.AbstractFactory
 {
     public class CocaColaFactory : BaseFactory
     {

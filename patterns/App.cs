@@ -6,21 +6,21 @@ namespace patterns
 {
     public class App
     {
-        private string[] commandForTerminate = new string[] { "0", "q", "e", "quit", "exit" };
-        private string[] programList;
-        private string[] fullPath;
+        private static readonly string ClassPath = "patterns " + Path.DirectorySeparatorChar + "src";
+        private static readonly string[] CommandsForTerminate = { "0", "q", "e", "quit", "exit" };
+        private const string EntryPointClassname = "Program";
+        private readonly string[] _programList;
 
-        public App(string[] path)
+        public App()
         {
-            fullPath = path;
+            _programList = GetAvailablePrograms();
         }
 
         public void Run()
         {
-            programList = GetAvailablePrograms();
             string programName = GetProgramName();
 
-            while (!commandForTerminate.Contains(programName))
+            while (!CommandsForTerminate.Contains(programName))
             {
                 Console.WriteLine("I want to start " + programName + "...");
                 StartProgram(programName);
@@ -30,79 +30,72 @@ namespace patterns
 
         private string[] GetAvailablePrograms()
         {
-            string src = "../../../" + String.Join("/", fullPath);
-            return Directory.GetDirectories(src).Select(path => path.Split('\\').Last()).ToArray();
+            string fullPath = "../../../" + ClassPath;
+
+            if (!Directory.Exists(fullPath))
+                fullPath = "./" + ClassPath;
+
+            if (!Directory.Exists(fullPath))
+                return new string[0];
+
+            return Directory.GetDirectories(fullPath)
+                .Select(path => path.Split(Path.DirectorySeparatorChar).Last()).ToArray();
         }
 
         private string GetProgramName()
         {
             Console.WriteLine("\r\n\r\nEnter a name or number of program:");
             PrintAllPrograms();
-            Console.WriteLine("Or type one of command to exit: " + String.Join(", ", commandForTerminate));
-            return Console.ReadLine().Trim().ToLower();
+            Console.WriteLine("Or type one of command to exit: " + string.Join(", ", CommandsForTerminate));
+            return Console.ReadLine()?.Trim().ToLower() ?? "";
         }
 
         private Type FindProgram(string programName)
         {
-            string targetName = ParseProgramName(programName);
+            var targetName = ParseProgramName(programName);
             if (targetName == null)
-            {
                 return null;
-            }
 
-            string programNameSpace = String.Join(".", fullPath);
-            Type programType = Type.GetType(programNameSpace + "." + targetName + ".Program");
+            var programType = Type.GetType(this.GetType().Namespace + "." + targetName + "." + EntryPointClassname);
             return programType;
         }
 
         private string ParseProgramName(string programName)
         {
             int programNumber;
-            int programsLength = programList.Count();
+            var programsLength = _programList.Count();
 
-            if (Int32.TryParse(programName, out programNumber))
+            if (int.TryParse(programName, out programNumber))
             {
                 if (programNumber < 1 || programNumber > programsLength)
-                {
                     return null;
-                }
 
                 --programNumber;
-                for (int i = 0; i < programsLength; ++i)
-                {
+                for (var i = 0; i < programsLength; ++i)
                     if (programNumber == i)
-                    {
-                        return programList[i];
-                    }
-                }
+                        return _programList[i];
             }
             else
             {
-                for (int i = 0; i < programsLength; ++i)
-                {
-                    if (programName == programList[i].ToLower())
-                    {
-                        return programList[i];
-                    }
-                }
+                for (var i = 0; i < programsLength; ++i)
+                    if (programName == _programList[i].ToLower())
+                        return _programList[i];
             }
             return null;
         }
 
         private void PrintAllPrograms()
         {
-            for (int i = 0, length = programList.Count(); i < length; ++i)
-            {
-                Console.WriteLine(String.Format("{0} - {1}", 1 + i, programList[i]));
-            }
+            for (int i = 0, length = _programList.Count(); i < length; ++i)
+                Console.WriteLine($"{1 + i} - {_programList[i]}");
         }
 
         private void StartProgram(string programName)
         {
-            Type target = FindProgram(programName);
+            var target = FindProgram(programName);
             if (target != null)
             {
-                BaseProgram program = (BaseProgram)Activator.CreateInstance(target);
+                var program = (BaseProgram)Activator.CreateInstance(target);
                 program.Start();
                 program = null;
                 GC.Collect();
