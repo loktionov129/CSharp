@@ -1,9 +1,10 @@
 ﻿using System;
+
 namespace patterns
 {
-    abstract public class BaseProgram
+    public abstract class BaseProgram
     {
-        abstract public void Run();
+        public abstract void Run();
 
         public void Start()
         {

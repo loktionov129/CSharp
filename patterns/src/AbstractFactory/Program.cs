@@ -1,6 +1,6 @@
-﻿namespace patterns.src.AbstractFactory
+﻿namespace patterns.AbstractFactory
 {
-    public class Program : patterns.BaseProgram
+    public class Program : BaseProgram
     {
         public override void Run()
         {
