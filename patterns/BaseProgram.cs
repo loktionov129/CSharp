@@ -4,7 +4,7 @@ namespace patterns
 {
     public abstract class BaseProgram
     {
-        public abstract void Run();
+        protected abstract void Run();
 
         public void Start()
         {

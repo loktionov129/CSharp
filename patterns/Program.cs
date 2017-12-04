@@ -1,11 +1,23 @@
-﻿namespace patterns
+﻿using System;
+using System.Linq;
+
+namespace patterns
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-            App app = new App();
-            app.Run();
+            string[] commandsForTerminate = { "0", "q", "e", "quit", "exit" };
+            App app = new App(commandsForTerminate);
+
+            string programName = app.AskProgramName();
+
+            while (!commandsForTerminate.Contains(programName))
+            {
+                Console.WriteLine("I want to start " + programName + "...");
+                app.StartProgram(programName);
+                programName = app.AskProgramName();
+            }
         }
     }
 }

@@ -2,7 +2,7 @@
 {
     public class Program : BaseProgram
     {
-        public override void Run()
+        protected override void Run()
         {
             Client client = new Client(new CocaColaFactory());
             client.Run();
