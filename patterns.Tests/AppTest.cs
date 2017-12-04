@@ -49,7 +49,7 @@ namespace patterns.Tests
             #endregion
 
             #region Step 2. Assert
-            CollectionAssert.AreEqual(actualProgramList, expectedProgramList);
+            CollectionAssert.AreEqual(expectedProgramList, actualProgramList);
             #endregion
         }
 
@@ -71,7 +71,7 @@ namespace patterns.Tests
             #endregion
 
             #region Step 2. Assert
-            Assert.AreEqual(actualProgram, expectedProgram);
+            Assert.AreEqual(expectedProgram, actualProgram);
             #endregion
         }
 
@@ -96,7 +96,7 @@ namespace patterns.Tests
             #endregion
 
             #region Step 2. Assert
-            Assert.AreEqual(actualProgram, expectedProgram);
+            Assert.AreEqual(expectedProgram, actualProgram);
             #endregion
         }
 
@@ -117,7 +117,7 @@ namespace patterns.Tests
             #endregion
 
             #region Step 2. Assert
-            Assert.AreEqual(actualProgram, null);
+            Assert.AreEqual(null, actualProgram);
             #endregion
         }
     }
