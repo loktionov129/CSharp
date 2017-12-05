@@ -6,7 +6,7 @@ namespace patterns
 {
     public class App
     {
-        private static readonly string ClassPath = "patterns " + Path.DirectorySeparatorChar + "src";
+        private static readonly string ClassPath = "patterns" + Path.DirectorySeparatorChar + "src";
         private const string EntryPointClassname = "Program";
         private readonly string[] _commandsForTerminate;
         private readonly string[] _programList;
