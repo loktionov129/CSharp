@@ -6,7 +6,13 @@ namespace patterns.Builder
     {
         protected override void Run()
         {
-            Console.WriteLine("hello from Builder");
+            Builder masonBuilder = new MasonBuilder();
+            Director director = new Director(masonBuilder);
+
+            director.Construct();
+
+            House masonHouse = masonBuilder.GetResult();
+            masonHouse.Show();
         }
     }
 }

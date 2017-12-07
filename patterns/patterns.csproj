@@ -58,6 +58,10 @@
     <Compile Include="src\AbstractFactory\PepsiFactory.cs" />
     <Compile Include="src\AbstractFactory\PepsiWater.cs" />
     <Compile Include="src\AbstractFactory\Program.cs" />
+    <Compile Include="src\Builder\Builder.cs" />
+    <Compile Include="src\Builder\Director.cs" />
+    <Compile Include="src\Builder\House.cs" />
+    <Compile Include="src\Builder\MasonBuilder.cs" />
     <Compile Include="src\Builder\Program.cs" />
   </ItemGroup>
   <ItemGroup>
