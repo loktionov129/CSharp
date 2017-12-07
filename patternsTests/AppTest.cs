@@ -4,7 +4,7 @@ using patterns;
 
 namespace patternsTests
 {
-    [TestFixture]
+    [TestFixture()]
     public class AppTest
     {
         private App app;
@@ -17,7 +17,7 @@ namespace patternsTests
         [Test()]
         public void GetAvailablePrograms_void_expectedProgramListReturned()
         {
-            string[] expectedProgramList = { "AbstractFactory", "Builder" };
+            string[] expectedProgramList = { "AbstractFactory", "Builder", "FactoryMethod" };
             string[] actualProgramList = app.GetAvailablePrograms();
 
             CollectionAssert.AreEqual(expectedProgramList, actualProgramList);

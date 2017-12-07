@@ -63,6 +63,11 @@
     <Compile Include="src\Builder\House.cs" />
     <Compile Include="src\Builder\MasonBuilder.cs" />
     <Compile Include="src\Builder\Program.cs" />
+    <Compile Include="src\FactoryMethod\ConcreteCreator.cs" />
+    <Compile Include="src\FactoryMethod\ConcreteProduct.cs" />
+    <Compile Include="src\FactoryMethod\Creator.cs" />
+    <Compile Include="src\FactoryMethod\Product.cs" />
+    <Compile Include="src\FactoryMethod\Program.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
