@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace patterns.FactoryMethod
+﻿namespace patterns.FactoryMethod
 {
     public class Program : BaseProgram
     {

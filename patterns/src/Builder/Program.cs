@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace patterns.Builder
+﻿namespace patterns.Builder
 {
     public class Program : BaseProgram
     {

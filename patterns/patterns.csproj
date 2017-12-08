@@ -68,11 +68,17 @@
     <Compile Include="src\FactoryMethod\Creator.cs" />
     <Compile Include="src\FactoryMethod\Product.cs" />
     <Compile Include="src\FactoryMethod\Program.cs" />
+    <Compile Include="src\Prototype\Program.cs" />
+    <Compile Include="src\Prototype\Prototype.cs" />
+    <Compile Include="src\Prototype\Human.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="src\Prototype\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
