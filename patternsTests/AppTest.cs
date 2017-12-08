@@ -18,7 +18,7 @@ namespace patternsTests
         [Test()]
         public void GetAvailablePrograms_void_expectedProgramListReturned()
         {
-            string[] expectedProgramList = { "AbstractFactory", "Builder", "FactoryMethod" };
+            string[] expectedProgramList = { "AbstractFactory", "Builder", "FactoryMethod", "Singleton" };
             string[] actualProgramList = app.ProgramList;
 
             CollectionAssert.AreEqual(expectedProgramList, actualProgramList);
