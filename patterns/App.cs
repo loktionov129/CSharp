@@ -14,10 +14,14 @@ namespace patterns
         protected internal const string EntryPointClassname = "Program";
         protected internal readonly string[] ProgramList;
 
-        public App(string[] commandsForTerminate = null)
+        public App(string[] commandsForTerminate = null, bool isCurrentDir = false)
         {
             _commandsForTerminate = commandsForTerminate ?? new [] { "quit", "exit" };
-            ProgramList = GetAvailablePrograms();
+
+            string relativePath = isCurrentDir
+                ? "." + Path.DirectorySeparatorChar
+                : string.Concat(Enumerable.Repeat(".." + Path.DirectorySeparatorChar, 3).ToArray());
+            ProgramList = GetAvailablePrograms(relativePath);
         }
 
         public string AskProgramName()
@@ -61,11 +65,8 @@ namespace patterns
             );
         }
 
-        protected internal string[] GetAvailablePrograms()
+        protected internal string[] GetAvailablePrograms(string relativePath)
         {
-            string relativePath = Type.GetType("Mono.Runtime") == null
-                ? "../../../"
-                : "./";
             string fullPath = relativePath + ClassPath;
 
             if (!Directory.Exists(fullPath))

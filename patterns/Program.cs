@@ -8,7 +8,7 @@ namespace patterns
         public static void Main(string[] args)
         {
             string[] commandsForTerminate = { "0", "q", "e", "quit", "exit" };
-            App app = new App(commandsForTerminate);
+            App app = new App(commandsForTerminate, isCurrentDir: Type.GetType("Mono.Runtime") != null);
 
             string programName = app.AskProgramName();
 
