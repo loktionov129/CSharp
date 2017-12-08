@@ -68,6 +68,8 @@
     <Compile Include="src\FactoryMethod\Creator.cs" />
     <Compile Include="src\FactoryMethod\Product.cs" />
     <Compile Include="src\FactoryMethod\Program.cs" />
+    <Compile Include="src\Singleton\Program.cs" />
+    <Compile Include="src\Singleton\DataBase.cs" />
     <Compile Include="src\Prototype\Program.cs" />
     <Compile Include="src\Prototype\Prototype.cs" />
     <Compile Include="src\Prototype\Human.cs" />
@@ -76,6 +78,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="src\Singleton\" />
+  </ItemGroup>
   <ItemGroup>
     <Folder Include="src\Prototype\" />
   </ItemGroup>

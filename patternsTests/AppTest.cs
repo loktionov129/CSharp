@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System.Linq;
+using System.IO;
 using patterns;
 
 namespace patternsTests
@@ -17,8 +18,9 @@ namespace patternsTests
         [Test()]
         public void GetAvailablePrograms_void_expectedProgramListReturned()
         {
-            string[] expectedProgramList = { "AbstractFactory", "Builder", "FactoryMethod", "Prototype" };
-            string[] actualProgramList = app.GetAvailablePrograms();
+            string[] expectedProgramList = { "AbstractFactory", "Builder", "FactoryMethod", "Singleton", "Prototype" };
+        };
+            string[] actualProgramList = app.ProgramList;
 
             CollectionAssert.AreEqual(expectedProgramList, actualProgramList);
         }
