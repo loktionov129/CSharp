@@ -58,6 +58,11 @@
     <Compile Include="src\AbstractFactory\PepsiFactory.cs" />
     <Compile Include="src\AbstractFactory\PepsiWater.cs" />
     <Compile Include="src\AbstractFactory\Program.cs" />
+    <Compile Include="src\Adapter\Adaprer.cs" />
+    <Compile Include="src\Adapter\Adaptee.cs" />
+    <Compile Include="src\Adapter\Client.cs" />
+    <Compile Include="src\Adapter\Program.cs" />
+    <Compile Include="src\Adapter\Target.cs" />
     <Compile Include="src\Builder\Builder.cs" />
     <Compile Include="src\Builder\Director.cs" />
     <Compile Include="src\Builder\House.cs" />
@@ -78,12 +83,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Folder Include="src\Singleton\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\Prototype\" />
-  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
