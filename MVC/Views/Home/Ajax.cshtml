@@ -1,0 +1,30 @@
+﻿@model System.Collections.Generic.IEnumerable<testAsp.Models.Class1>
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/jquery-1.10.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+}
+@{
+    ViewBag.Title = "Ajax";
+}
+<h2>@ViewBag.Title.</h2>
+
+@{
+    var ajaxOptions = new AjaxOptions
+                          {
+                              UpdateTargetId = "ItemsList",
+                              Url = Url.Action("GetItems")
+                          };
+}
+@using (Ajax.BeginForm(ajaxOptions))
+{
+    <ul id="ItemsList">
+        @Html.Action("GetItems", new { ViewBag.active })
+    </ul>
+    <p>
+        @Html.DropDownList("active", new SelectList(new[] { "All", "Active", "Passive" }))
+    </p>
+    <p><input type="submit" value="Submit!" /></p>
+}
