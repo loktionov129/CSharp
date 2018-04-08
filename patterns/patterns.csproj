@@ -78,6 +78,13 @@
     <Compile Include="src\Prototype\Program.cs" />
     <Compile Include="src\Prototype\Prototype.cs" />
     <Compile Include="src\Prototype\Human.cs" />
+    <Compile Include="src\Visitor\Animal.cs" />
+    <Compile Include="src\Visitor\Cat.cs" />
+    <Compile Include="src\Visitor\Dog.cs" />
+    <Compile Include="src\Visitor\Hamster.cs" />
+    <Compile Include="src\Visitor\Monkey.cs" />
+    <Compile Include="src\Visitor\PaymentVisitor.cs" />
+    <Compile Include="src\Visitor\Program.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
