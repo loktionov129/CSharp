@@ -1,0 +1,1 @@
+Implement background tasks in microservices with IHostedService and the [BackgroundService](https://docs.microsoft.com/en-us/dotnet/standard/microservices-architecture/multi-container-microservice-net-applications/background-tasks-with-ihostedservice) class
